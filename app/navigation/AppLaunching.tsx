@@ -14,6 +14,14 @@ const AppLaunching = () => {
 
   useEffect(() => {
     messaging().requestPermission()
+    messaging()
+      .getToken()
+      .then((value) => {
+        console.log(value)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }, [])
 
   useEffect(() => {
